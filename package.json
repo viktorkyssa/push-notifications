@@ -1,0 +1,22 @@
+{
+  "name": "push-notify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "service-worker.js",
+  "scripts": {
+    "web-push": "web-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viktorkissa/push-notifications.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viktorkissa/push-notifications/issues"
+  },
+  "homepage": "https://github.com/viktorkissa/push-notifications#readme",
+  "dependencies": {
+    "web-push": "^3.4.3"
+  }
+}
