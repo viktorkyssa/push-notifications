@@ -54,16 +54,12 @@
                 console.log('Subscription', sub);
                 if(sub === null) {
                     // Create new subscription
-                    var vapidPublicKey = "BNwKs8xAQdPrS1p4WLeCkPW_2UJBAXBp-uZHphsnkr6DlexPWK1TE-xhB6jT7fdKcyRRZ3S_u1S2FTLiTW8rn3w";
+                    var vapidPublicKey = "BIZzf_ZQmGP9uL3sUOygdwxBPSXECo3T7UMWL1BcZyTMbMQ3Ju0wsVANCWifXW8L7AKMWrO7IHNjg0hciRBrsiY";
                     var convertedVapidPublicKey = urlBase64ToUint8Array(vapidPublicKey);
-                    // return reg.pushManager.subscribe({
-                    //     userVisibleOnly: true,
-                    //     applicationServerKey: convertedVapidPublicKey
-                    // });
-
-                    return {
-                        name: 'Tiger'
-                    }
+                    return reg.pushManager.subscribe({
+                        userVisibleOnly: true,
+                        applicationServerKey: convertedVapidPublicKey
+                    });
                 } else {
                     // We have a subscription
                 }
