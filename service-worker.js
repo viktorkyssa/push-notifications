@@ -9,7 +9,22 @@ self.addEventListener('notificationclick', function (e) {
         console.log('Confirm was chosen');
         notification.close();
     } else {
-        console.log('Action was not confirmed',action);
+        e.waitUntil(
+            clients.matchAll().then(function (clis) {
+                var client = clis.find(function (c) {
+                    return c.visibilityState === 'visible'; // our browser is open
+                });
+
+                if(client !== undefined) {
+                    client.navigate('http://localhost:3001');
+                    client.focus();
+                } else {
+                    clients.openWindow('http://localhost:3001')
+                }
+                console.log('Action was not confirmed',action);
+                notification.close();
+            })
+        );
     }
 });
 
